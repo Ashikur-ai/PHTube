@@ -42,18 +42,26 @@ const loadVideo = async (id) => {
   const cardContainer = document.getElementById('card-container');
   // clearing the data for each load 
   cardContainer.textContent = '';
+  const valu = "whats up";
 
   if (videos.length) {
     videos.forEach(video => {
+      const duration = parseInt(video.others.posted_date);
+      const hour = parseInt(duration / 3600);
+      const minute = parseInt(duration / 60 - hour * 60);
       // 2.2 create new element 
       const div = document.createElement('div');
       // 2.3 adding inner html 
       div.innerHTML = `
-        <div class="card card-compact">
-        <figure class="rounded-lg">
-        <img  src="${video.thumbnail}"
-            alt="Shoes" /></figure>
-        <div class="mt-5">
+        <div class="card ">
+        <div class="">
+        <img class='rounded-lg  h-52 w-96'  src="${video.thumbnail}"
+            alt="Shoes" />
+        </div>
+        <div class="flex justify-end -mt-10 mr-2">
+          <p class=" bg-black text-white px-4 rounded-lg ">${video.others.posted_date ? `${hour} hrs ${minute} min ago` : ``}</p>
+        </div>
+        <div class="mt-8 pt-5">
           <div class="flex  gap-2">
             <div class="avatar">
               <div class="w-12 rounded-full">
@@ -119,17 +127,26 @@ const loadAllVideo = async () => {
   // clearing the data for each load 
   cardContainer.textContent = '';
 
+  
+
   videos.forEach(video => {
-    console.log(video.authors[0].verified);
+    const duration = parseInt(video.others.posted_date);
+    const hour = parseInt(duration / 3600);
+    const minute = parseInt(duration / 60 - hour * 60);
+    
     // 2. create new element 
     const div = document.createElement('div');
     // 3. adding inner html 
     div.innerHTML = `
-        <div class="card card-compact">
-        <figure class="rounded-lg">
-        <img  src="${video.thumbnail}"
-            alt="Shoes" /></figure>
-        <div class="mt-5">
+        <div class="card ">
+        <div class="">
+        <img class='rounded-lg h-52 w-96 '  src="${video.thumbnail}"
+            alt="Shoes" />
+        </div>
+        <div class="flex justify-end -mt-10 mr-2">
+          <p class=" bg-black text-white px-4 rounded-lg ">${video.others.posted_date ? `${hour} hrs ${minute} min ago` : ``} </p>
+        </div>
+        <div class="mt-8 pt-5">
           <div class="flex  gap-2">
             <div class="avatar">
               <div class="w-12 rounded-full">
@@ -163,8 +180,7 @@ const loadAllVideo = async () => {
   })
 }
 
-loadCategory();
-
+loadCategory()
 
 
 
