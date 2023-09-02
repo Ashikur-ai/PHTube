@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PH-Tube</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .category-button:focus {
+            background-color: #e74c3c;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container mx-auto">
+        <div class="navbar bg-base-100 mb-5">
+            <div class="navbar-start">
+                <div class="dropdown"></div>
+                <a href="index.html" class="normal-case text-xl"><img src="image/Logo.png" alt="" /></a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <button  class="btn bg-red-600 text-white">Blog page</button>
+            </div>
+            <div class="navbar-end hidden lg:flex">
+                <a class="btn bg-red-600 text-white">Blog</a>
+            </div>
+        </div>
+        <hr />
+    </header>
+    <main class="container mx-auto mt-3">
+        <div class="hero rounded-lg bg-base-200 mt-5">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <img src="https://www.freecodecamp.org/news/content/images/2022/01/28.png" class="max-w-sm rounded-lg shadow-2xl" />
+                <div>
+                    <h1 class="text-2xl font-bold">Question-1: <br>Discuss the scope of var, let, and const</h1>
+                    <p class="py-6">
+                        The var is the oldest keyword to declare a variable in JavaScript. The var keyword was historically used for variable declaration, but it has some unique scoping characteristics that can lead to unexpected behavior in certain situations. It's important to understand how var works and why it's generally considered less preferable than let and const for variable declaration in modern JavaScript.
+                        <br>
+                        <b>Scope </b>: Variables declared with var are function-scoped, which means they are accessible within the function in which they are
+                        declared, regardless of where they are declared within that function They are hoisted to the top of their containing function or global scope. This means that the variable declaration is moved to the top during the compilation phase, but the assignment remains where it is.
+                        The variable declared with var outside of any function are attached to the global object. This can potentially lead to global namespace pollution and conflicts with other scripts.
+                        
+
+
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="hero rounded-lg bg-base-200 mt-5">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <div>
+                    <h1 class="text-2xl font-bold">Question-2: <br>Tell us the use cases of null and undefined</h1>
+                    <p class="py-6">
+                        The value undefined means a variable has been declared but has not yet been assigned a value. undefined is a
+                        type by itself (undefined). Unassigned variables are initialized by JavaScript with a default value of undefined.
+                        On the otherhand, null is an object. It can be assigned to a variable as a representation of no value.
+                        JavaScript never sets a value to null. That must be done programmatically.
+                        <br>
+                        <br>
+                        <b>UseCase of null and undefined </b> <br>
+                        When a variable is declared but not assigned a value, it is automatically initialized with undefined. The
+                        functions usually do not return undefined. Simply which is not existed is undefined. On the otherhand, we can
+                        set a variable or object property to null to clear its previous value. We also used null in conditional
+                        statement to check if a value has been intentionally set to noting.
+                
+                
+                
+                    </p>
+                
+                </div>
+                <img src="https://www.syncfusion.com/blogs/wp-content/uploads/2022/11/Null-vs.-Undefined-in-JavaScript-1.png"
+                    class="max-w-sm rounded-lg shadow-2xl" />
+                
+            </div>
+        </div>
+
+        <div class="hero rounded-lg bg-base-200 mt-5">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <img src="https://images.velog.io/images/vsnm25/post/0692367a-3209-4460-bd84-28f33f6231f4/restAPI.png"
+                    class="max-w-sm rounded-lg shadow-2xl" />
+                <div>
+                    <h1 class="text-2xl font-bold">Question-3: <br>What do you mean by REST API?</h1>
+                    <p class="py-6">
+                        REST API is a simple and flexible method of accessing web services that does not require any processing. It is an API
+                        that adheres to the REST, or representational state transfer, architectural style's design principles. REST technology
+                        is often favoured over the more sophisticated Simple Object Access Protocol (SOAP) technology because it consumes less
+                        bandwidth, is simpler, and more adaptable to internet use. It is used to retrieve or provide information from a web
+                        service. All REST API connection involves only HTTP requests.
+                    </p>
+        
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="js/script.js"></script>
+    <script>
+        // select the category buttons
+        const buttons = document.querySelectorAll('.category-button');
+
+
+        function handleButtonClick(event) {
+
+            buttons.forEach(button => {
+                button.classList.remove('focused');
+            });
+
+
+            event.target.classList.add('focused');
+        }
+
+
+        buttons.forEach(button => {
+            button.addEventListener('click', handleButtonClick);
+        });
+
+    </script>
+
+</body>
+
+</html>
